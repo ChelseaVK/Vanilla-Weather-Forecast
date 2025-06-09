@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Vanilla Weather Forecast</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            id="search-form-input"
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city"></h1>
+            <p class="weather-app-details">
+              <span id="time"></span>, <span id="description"></span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div id="icon">/></div>
+            <div class="weather-app-temperature" id="temperature">12</div>
+            <div class="weather-app-unit">°F</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/ChelseaVK" target="_blank">
+          Chelsea Van Klaveren
+        </a>
+        is
+        <a
+          href="https://github.com/ChelseaVK/Vanilla-Weather-App"
+          target="_blank"
+          >open-sourced on Github</a
+        >
+        and
+        <a
+          href="https://vanillaweatherforecastshecodes.netlify.app/"
+          target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
