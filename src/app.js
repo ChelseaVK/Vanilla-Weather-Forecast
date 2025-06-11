@@ -15,6 +15,8 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed} mph`;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -55,7 +57,13 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Fort Worth");
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "5b7e32442badt617fc2dae0afo330c92";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecast = document.querySelector("#forecast");
 
   let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
@@ -77,5 +85,3 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
-
-displayForecast();
